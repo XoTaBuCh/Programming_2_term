@@ -1,4 +1,4 @@
-all: clean buildMain buildTest runTest linterCheck valgrindCheck
+all: clean buildMain buildTest runTest valgrindCheck linterCheck
 
 buildMain:
 	mkdir -p project/main
