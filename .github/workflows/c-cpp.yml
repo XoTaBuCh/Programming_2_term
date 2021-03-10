@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: install valgrind and cpplint
+      run: |
+        sudo apt install -y valgrind
+        sudo pip install cpplint
+    
     - name: building and testing
       run: |
         cd 1
