@@ -1,4 +1,4 @@
-all: buildMain buildTest runTest
+all: clean buildMain buildTest runTest
 
 buildMain:
 	mkdir -p project/main
@@ -11,3 +11,5 @@ buildTest:
 runTest:
 	./project/test/tester
 
+clean:
+	rm -rf project
