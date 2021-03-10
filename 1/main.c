@@ -8,18 +8,18 @@
 int Double(char arr[]) {
     int i = 0, sum1 = 0, sum2 = 0;
     while (arr[i] != 0 && arr[i] != '.') {
-      if (arr[i] < '0' || arr[i] > '9') {
-           return -1;
-      }
-      sum1 += arr[i] - '0';
-      i++;
+        if (arr[i] < '0' || arr[i] > '9') {
+             return -1;
+        }
+        sum1 += arr[i] - '0';
+        i++;
     }
     if (arr[i] != 0) {
-    i++;
+        i++;
     }
     while (arr[i] != 0) {
-           if (arr[i] < '0' || arr[i] > '9') {
-            return -1;
+        if (arr[i] < '0' || arr[i] > '9') {
+          return -1;
         }
         sum2 += arr[i] - 48;
         i++;
