@@ -1,6 +1,7 @@
+/*Copyright 2021 XoT@B*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include "prog/1/main.h"
 
 #define max(x, y) ((x) > (y) ? (x) : (y))
 
