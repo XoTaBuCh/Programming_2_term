@@ -1,3 +1,4 @@
+/*Copyright 2021 XoT@B*/
 #include "main.h"
 #include <assert.h>
 
