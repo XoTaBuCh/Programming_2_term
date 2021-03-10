@@ -17,7 +17,7 @@ jobs:
     - name: install valgrind and cpplint
       run: |
         sudo apt install -y valgrind
-        sudo pip install cpplint
+        sudo pip3 install cpplint
     
     - name: building and testing
       run: |
