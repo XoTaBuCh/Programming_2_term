@@ -1,4 +1,4 @@
-all: clean buildMain buildTest runTest
+all: clean buildMain buildTest runTest linterCheck valgrindCheck
 
 buildMain:
 	mkdir -p project/main
@@ -10,6 +10,14 @@ buildTest:
 
 runTest:
 	./project/test/tester
+	
+valgrindCheck:
+	mkdir -p project/temp
+	echo "1546.1" > project/temp/input.txt
+	valgrind ./project/main/double < project/temp/input.txt
+
+linterCheck:
+	cpplint *.c
 
 clean:
 	rm -rf project
