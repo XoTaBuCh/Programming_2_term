@@ -12,7 +12,7 @@ assert(Double("0.784") == 19);
 assert(Double("99999999999.9999") == 99);
 assert(Double("0") == 0);
 assert(Double("11111.111111111111") == 12);
-assert(Double("87451.74") == 25);
+assert(Double("sfhdzfhdz") == -1);
 }
 #undef main
 int main() {
