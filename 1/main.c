@@ -9,8 +9,7 @@ int Double(char arr[]) {
     int i = 0, sum1 = 0, sum2 = 0;
     while (arr[i] != 0 && arr[i] != '.') {
       if (arr[i] < '0' || arr[i] > '9') {
-          printf("Error!\n");
-           return 0;
+           return -1;
       }
       sum1 += arr[i] - '0';
       i++;
@@ -20,8 +19,7 @@ int Double(char arr[]) {
     }
     while (arr[i] != 0) {
            if (arr[i] < '0' || arr[i] > '9') {
-            printf("Error!\n");
-            return 0;
+            return -1;
         }
         sum2 += arr[i] - 48;
         i++;
@@ -34,7 +32,13 @@ int main(int argc, const char * argv[]) {
     char arr[SIZE];
     printf("Enter a double, length < 10^6:\n");
     scanf("%s", arr);
-    printf("Max sum = %d\n", Double(arr));
+    int sum = Double(arr);
+    if (sum == -1) {
+        printf("Error!\n");
+        system("pause");
+        return 0;
+    }
+    printf("Max sum = %d\n", sum);
     system("pause");
     return 0;
 }
