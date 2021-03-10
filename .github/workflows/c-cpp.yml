@@ -17,5 +17,3 @@ jobs:
       run: |
         cd 1
         make
-        cd ..
-        done
