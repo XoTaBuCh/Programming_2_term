@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "main.h"
 
-#define max(x, y) ((x)>(y)?(x):(y))
+#define max(x, y) ((x) > (y) ? (x) : (y))
+#define size 1000000
 
 int Double(char arr[]) {
     int i = 0, sum1 = 0, sum2 = 0;
@@ -29,7 +30,6 @@ int Double(char arr[]) {
 }
 
 int main(int argc, const char * argv[]) {
-    const int size = 1e6;
     char arr[size];
     printf("Enter a (double, length < 10^6):\n");
     scanf("%s", arr);
