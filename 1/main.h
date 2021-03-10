@@ -1,1 +1,1 @@
-int Double(char *arr);
+int Double(char arr[]);
