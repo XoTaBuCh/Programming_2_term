@@ -19,10 +19,13 @@ jobs:
         sudo apt install -y valgrind
         sudo pip3 install cpplint
     
-    - name: building and testing
+    - name: building and testing lab1
       run: |
         cd 1
         make
+    - name: building and testing lab1
+      run: |
         cd
-        cd 2/2.1.20
+        cd 2
+        cd 2.1.20
         make
