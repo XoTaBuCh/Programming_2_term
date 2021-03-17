@@ -33,35 +33,36 @@ int main(int argc, const char * argv[]) {
         printf("7 - Information about the version and the author of the program.\n");
         printf("8 - Exiting the program.\n");
         scanf("%d", &type);
-        switch (type){
+        switch (type) {
             case 1:
-                while(1) {
+                while (1) {
                     printf("Enter the radius >=0:\n");
                     scanf("%Lf", &r);
                     if (r >= 0) {
                         break;
-                    }
-                    else {
+                    } else {
                         rewind(stdin);
                         continue;
                     }
                 }
             case 2:
-                if (r < 0) printf("Error, enter the radius >= 0!\n");
-                else printf("Radius = %.2Lf, Area = %.2Lf\n", r, AreaOfCircle(r));
+                if (r < 0) {
+                    printf("Error, enter the radius >= 0!\n");
+                } else {
+                    printf("Radius = %.2Lf, Area = %.2Lf\n", r, AreaOfCircle(r));
+                }
                 break;
             case 3:
                 if (r < 0) {
                     printf("Error, enter the radius >= 0!\n");
                     break;
                 }
-                while(1) {
+                while (1) {
                     printf("Enter the angle in radians (0 <= a <= 2 * PI): \n");
                     scanf("%Lf", &a);
                     if (a >= 0 && a <= 2 * PI) {
                        break;
-                    }
-                    else {
+                    } else {
                         rewind(stdin);
                         continue;
                     }
@@ -69,16 +70,25 @@ int main(int argc, const char * argv[]) {
                 printf("Radius = %.2Lf, Area = %.2Lf\n", r, AreaByAngle(r, a));
                 break;
             case 4:
-                if (r < 0) printf("Error, enter the radius >= 0!\n");
-                else printf("Radius = %.2Lf, Circumference = %.2Lf\n", r, Circumference(r));
+                if (r < 0) {
+                    printf("Error, enter the radius >= 0!\n");
+                } else {
+                    printf("Radius = %.2Lf, Circumference = %.2Lf\n", r, Circumference(r));
+                }
                 break;
             case 5:
-                if (r < 0) printf("Error, enter the radius >= 0!\n");
-                else printf("Radius = %.2Lf, Side of the inscribed square = %.2Lf\n", r, SideInscribedSquare(r));
+                if (r < 0) {
+                    printf("Error, enter the radius >= 0!\n");
+                } else {
+                    printf("Radius = %.2Lf, Side of the inscribed square = %.2Lf\n", r, SideInscribedSquare(r));
+                }
                 break;
             case 6:
-                if (r < 0) printf("Error, enter the radius >= 0!\n");
-                else printf("Radius = %.2Lf, Volume of the cone = %.2Lf\n", r, VolumeOfCone(r));
+                if (r < 0) {
+                    printf("Error, enter the radius >= 0!\n");
+                } else {
+                    printf("Radius = %.2Lf, Volume of the cone = %.2Lf\n", r, VolumeOfCone(r));
+                }
                 break;
             case 7:
                 printf("Version 1.0, Author - XoT@B\n");
