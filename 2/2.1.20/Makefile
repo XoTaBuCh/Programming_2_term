@@ -13,7 +13,7 @@ runTest:
 	
 valgrindCheck:
 	mkdir -p project/temp
-	echo "1546.1" > project/temp/input.txt
+	echo "1 1 2 8" > project/temp/input.txt
 	valgrind ./project/main/circle < project/temp/input.txt
 
 linterCheck:
