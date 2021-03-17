@@ -7,9 +7,9 @@ int FindN(double x, double e) {
     int n = 0;
     while (fabs(left - right) >= e) {
         if (n % 2 == 0) {
-            right += (double)a / b;
+            right += a / b;
         } else {
-            right -= (double)a / b;
+            right -= a / b;
         }
         n++;
         a *= x * x;
@@ -21,14 +21,14 @@ int FindN(double x, double e) {
 int main() {
     double x, e;
     printf("Enter your angel x (x > 0):\n");
-    while (scanf("%lf",&x)!=1 || x <= 0) {
+    while (scanf("%lf", &x) != 1 || x <= 0) {
         printf("Error, enter again\n");
         while (getchar() != '\n') {}
     }
     printf("Enter your e (e > 0):\n");
-    while (scanf("%lf",&e)!=1 || e <= 0) {
+    while (scanf("%lf", &e)!=1 || e <= 0) {
         printf("Error, enter again\n");
-        while (getchar() != '\n') {}  
+        while (getchar() != '\n') {}
     }
     printf("N = %d\n", FindN(x, e));
     system("pause");
