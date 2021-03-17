@@ -26,7 +26,7 @@ int main() {
         while (getchar() != '\n') {}
     }
     printf("Enter your e (e > 0):\n");
-    while (scanf("%lf", &e)!=1 || e <= 0) {
+    while (scanf("%lf", &e) != 1 || e <= 0) {
         printf("Error, enter again\n");
         while (getchar() != '\n') {}
     }
