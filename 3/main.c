@@ -10,8 +10,8 @@
 void Draw(int n, int m, int** Array) {
     system("cls");
 	printf("N - amount of lines, M - amount of columns. 0 - not eaten piece of cake, 1 - eaten, 2 - poisoned.\n\n");
-	for (int i = 0; i < n; i++)	{
-		for (int j = 0; j < m; j++)	{
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++) {
 			printf("%d", Array[i][j]);
 			printf("  ");
 		}
@@ -20,12 +20,12 @@ void Draw(int n, int m, int** Array) {
 }
 
 int Step(int string, int column, int** Array) {
-	if (Array[string][column] == 2)	{
+	if (Array[string][column] == 2) {
 		return 2;
 	}
 	if (Array[string][column] != 1 && Array[string - 1][column] != 1 && Array[string][column + 1] != 1) {
 		Array[string][column] = 1;
-		Array[string - 1][column] = 1;			
+		Array[string - 1][column] = 1;
 		Array[string][column + 1] = 1;
 		return 1;
 	} else {
@@ -83,5 +83,5 @@ int main() {
 				break;
 			default: break;
 		}
-	}	
+	}
 }
