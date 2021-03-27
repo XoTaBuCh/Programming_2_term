@@ -31,6 +31,6 @@ int main() {
         while (getchar() != '\n') {}
     }
     printf("N = %d\n", FindN(x, e));
-    system("pause");
+    //system("pause");
     return 0;
 }
