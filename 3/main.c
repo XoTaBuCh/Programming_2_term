@@ -5,8 +5,9 @@
 выбранной. Проигрывает тот, кто съедает отравленную клетку.*/
 
 #include <stdio.h>
-#include <Windows.h>
 #include "main.h"
+#include <windows.h>
+
 
 void Draw(int n, int m, int** Array)
 {
@@ -53,7 +54,7 @@ int main()
         printf("ERROR! Enter integer\n");
         while (getchar() != '\n') {}
     }
-	
+
 	int** Array = (int**)malloc(n * sizeof(int*));
 	for (int i = 0; i < n; i++)
 	{
@@ -85,7 +86,7 @@ int main()
 		{
 			case 2:
 				printf("You lose");
-        		Sleep(1000); 
+        		system("pause");
 				for (int i = 0; i < n; i++)
 				{
 					free(Array[i]);
@@ -95,7 +96,7 @@ int main()
 				break;
 			case 0:
 				printf("A piece has already been eaten, choose another\n");
-				Sleep(1000);
+				system("pause");
 				break;
 			default: break;
 		}
