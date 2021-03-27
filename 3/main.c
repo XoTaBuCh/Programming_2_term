@@ -6,8 +6,6 @@
 
 #include <stdio.h>
 #include "main.h"
-#include <windows.h>
-
 
 void Draw(int n, int m, int** Array)
 {
@@ -86,7 +84,6 @@ int main()
 		{
 			case 2:
 				printf("You lose");
-        		system("pause");
 				for (int i = 0; i < n; i++)
 				{
 					free(Array[i]);
@@ -96,7 +93,6 @@ int main()
 				break;
 			case 0:
 				printf("A piece has already been eaten, choose another\n");
-				system("pause");
 				break;
 			default: break;
 		}
