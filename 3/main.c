@@ -5,6 +5,7 @@
 выбранной. Проигрывает тот, кто съедает отравленную клетку.*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 void Draw(int n, int m, int** Array) {
