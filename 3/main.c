@@ -7,14 +7,11 @@
 #include <stdio.h>
 #include "main.h"
 
-void Draw(int n, int m, int** Array)
-{
+void Draw(int n, int m, int** Array) {
     system("cls");
 	printf("N - amount of lines, M - amount of columns. 0 - not eaten piece of cake, 1 - eaten, 2 - poisoned.\n\n");
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
+	for (int i = 0; i < n; i++)	{
+		for (int j = 0; j < m; j++)	{
 			printf("%d", Array[i][j]);
 			printf("  ");
 		}
@@ -22,14 +19,11 @@ void Draw(int n, int m, int** Array)
 	}
 }
 
-int Step(int string, int column, int** Array)
-{
-	if (Array[string][column] == 2)
-	{
+int Step(int string, int column, int** Array) {
+	if (Array[string][column] == 2)	{
 		return 2;
 	}
-	if (Array[string][column] != 1 && Array[string - 1][column] != 1 && Array[string][column + 1] != 1)
-	{
+	if (Array[string][column] != 1 && Array[string - 1][column] != 1 && Array[string][column + 1] != 1) {
 		Array[string][column] = 1;
 		Array[string - 1][column] = 1;			
 		Array[string][column + 1] = 1;
@@ -38,8 +32,7 @@ int Step(int string, int column, int** Array)
 		return 0;
 	}
 }
-int main()
-{
+int main() {
 	int n = 0, m = 0, column = 0, string = 0;
 	printf("N - amount of lines, M - amount of columns. 0 - not eaten piece of cake, 1 - eaten, 2 - poisoned.\n\n");
 	printf("Enter n: ");
@@ -54,21 +47,17 @@ int main()
     }
 
 	int** Array = (int**)malloc(n * sizeof(int*));
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		Array[i] = (int*)malloc(m * sizeof(int));
 	}
-	for (int i = 0; i < n; i++)
-	{
-		for (int k = 0; k < m; k++)
-		{
+	for (int i = 0; i < n; i++) {
+		for (int k = 0; k < m; k++) {
 			Array[i][k] = 0;
 		}
 	}
 	Array[n - 1][0] = 2;
 
-	while (1)
-	{
+	while (1) {
 		Draw(n, m, Array);
 		printf("Select a column: ");
 		while (scanf("%d", &column) != 1 || column < 0 || column >= (n - 1)) {
@@ -80,12 +69,10 @@ int main()
        		printf("ERROR! Enter integer < M\n");
        		while (getchar() != '\n') {}
     	}
-		switch(Step(string, column, Array))
-		{
+		switch(Step(string, column, Array)) {
 			case 2:
 				printf("You lose");
-				for (int i = 0; i < n; i++)
-				{
+				for (int i = 0; i < n; i++) {
 					free(Array[i]);
 				}
 				free(Array);
