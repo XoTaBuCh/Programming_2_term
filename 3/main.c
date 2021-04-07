@@ -20,6 +20,30 @@ void Draw(int n, int m, int** Array) {
 	}
 }
 
+int** array_malloc(int n, int m) {
+    int** Array;
+    if (!(Array = (int**) malloc(n * sizeof(int*)))) {
+        printf("Error: can't allocate memory");
+        exit(1);
+    }
+
+    int i;
+    for (i = 0; i < n; i++) {
+        if (!(Array[i] = (int*) malloc(m * sizeof(int)))) {
+            printf("Error: can't allocate memory");
+            exit(1);
+        }
+    }
+    return Array;
+}
+
+void array_free(int **Array, int n) {
+    for (int i = 0; i < n; i++) {
+        free(Array[i]);
+    }
+    free(Array);
+}
+
 int Step(int string, int column, int** Array) {
 	if (Array[string][column] == 2) {
 		return 2;
@@ -47,15 +71,7 @@ int main() {
         while (getchar() != '\n') {}
     }
 
-	int** Array = (int**)malloc(n * sizeof(int*));
-	for (int i = 0; i < n; i++) {
-		Array[i] = (int*)malloc(m * sizeof(int));
-	}
-	for (int i = 0; i < n; i++) {
-		for (int k = 0; k < m; k++) {
-			Array[i][k] = 0;
-		}
-	}
+	int** Array = array_malloc(n, m);
 	Array[n - 1][0] = 2;
 
 	while (1) {
@@ -73,10 +89,7 @@ int main() {
 		switch(Step(string, column, Array)) {
 			case 2:
 				printf("You lose");
-				for (int i = 0; i < n; i++) {
-					free(Array[i]);
-				}
-				free(Array);
+				array_free(Array, n);
 				return 0;
 				break;
 			case 0:
