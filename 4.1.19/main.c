@@ -13,7 +13,7 @@
 
 int my_strlen(char c_str[]) {
 	int count = 0;
-	for (count; c_str[count] != '\0'; count++);
+	for (count; c_str[count] != '\0'; count++) {};
 	return count;
 }
 
@@ -35,7 +35,7 @@ int main() {
 				break;
 			}
 		}
-	}   
+	}
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < N; j++) {
 			int r = my_strlen(words[i]) - 1;
@@ -51,8 +51,7 @@ int main() {
 					words[j][k] = temp[k];
 				}
 				break;
-			}
-			else if (words[j][0] != words[i][r] && i + 1 >= N) {
+			} else if (words[j][0] != words[i][r] && i + 1 >= N) {
 				printf("ERROR!\n");
 				return 0;
 			}
