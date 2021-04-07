@@ -4,32 +4,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <conio.h>
 
 int my_strlen(char c_str[]) {
 	int count = 0;
-	for (count; c_str[count] != '\0'; count++);
+	for (count; c_str[count] != '\0'; count++) {}
 	return count;
 }
 
-int lesser_length(char* s1, char* s2)
-{
+int lesser_length(char* s1, char* s2) {
 	return ((my_strlen(s1) < my_strlen(s2)) ? my_strlen(s1) : my_strlen(s2));  
 }
 
-int main()
-{
+int main() {
 	char s[1025] = { 0 }, result[100][200];
 
-	FILE* f = NULL;
-	if (fopen_s(&f, "input.txt", "r"))
-	{
-		perror("Cannot open file.\n");
-		exit(-3);
-	}
+	FILE *f = fopen("input.txt", "r");
+    if (f == NULL) {
+        printf("Input file is invalid");
+        exit(-1);
+    }
 
-	while (!feof(f))
-	{
+	while (!feof(f)) {
 		fgets(s, 1024, f);
 	}
 	fclose(f);
@@ -42,8 +37,7 @@ int main()
 		if (s[i] != ',' && s[i] != '.' && s[i] != ' ') {
 			word[j] = s[i];
 			j++;
-		}
-		else {
+		} else {
 			word[j] = '\0';
 			j = 0;
 			while (1) {
@@ -70,16 +64,13 @@ int main()
 	for (int x = 0; x < m - 1; x++) {
 		for (int y = x + 1; y < m; y++) {
 			int min_len = lesser_length(result[x], result[y]);
-			for (int i = 0; i < min_len; i++)
-			{
-				if (result[x][i] > result[y][i])
-				{
+			for (int i = 0; i < min_len; i++) {
+				if (result[x][i] > result[y][i]) {
 					strcpy(tmp, result[x]);
 					strcpy(result[x], result[y]);
 					strcpy(result[y], tmp);
 					break;
-				}
-				else if (result[x][i] < result[y][i])
+				} else if (result[x][i] < result[y][i])
 					break;
 			}
 		}
