@@ -12,7 +12,7 @@ int my_strlen(char c_str[]) {
 }
 
 int lesser_length(char* s1, char* s2) {
-	return ((my_strlen(s1) < my_strlen(s2)) ? my_strlen(s1) : my_strlen(s2));  
+	return ((my_strlen(s1) < my_strlen(s2)) ? my_strlen(s1) : my_strlen(s2));
 }
 
 int main() {
@@ -70,8 +70,9 @@ int main() {
 					strcpy(result[x], result[y]);
 					strcpy(result[y], tmp);
 					break;
-				} else if (result[x][i] < result[y][i])
+				} else if (result[x][i] < result[y][i]) {
 					break;
+				}
 			}
 		}
 	}
