@@ -13,7 +13,7 @@
 
 int my_strlen(char c_str[]) {
 	int count = 0;
-	for (count; c_str[count] != '\0'; count++) {};
+	for (count; c_str[count] != '\0'; count++) {}
 	return count;
 }
 
