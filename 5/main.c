@@ -11,9 +11,8 @@ void checkPtr(void *ptr) {
     }
 }
 
-void copy_from_buffer(char **buffer, char ***str, 
+void copy_from_buffer(char **buffer, char ***str,
                       int *const length, int *const n) {
-
     **str = (char *)realloc(**str, (*n + *length + 1) * sizeof(char));
     checkPtr(str);
 
@@ -58,12 +57,12 @@ typedef struct stack {
     char symb;
 } Stack;
 
-short palindrome(char **str, int n){
+short palindrome(char **str, int n) {
 	int i;
 	short ans = 1;
     Stack *ptr = (Stack *)malloc(sizeof(Stack));
     checkPtr(ptr);
-	
+
     ptr->l = NULL;
     ptr->r = NULL;
     ptr->symb = (*str)[0];
@@ -101,9 +100,8 @@ short palindrome(char **str, int n){
 
 
 int main() {
-    
     char *str = NULL;
-    int n = read_str(&str); 
+    int n = read_str(&str);
 
     if (palindrome(&str, n) == 1) {
         printf("The string is a palindrome.\n");
