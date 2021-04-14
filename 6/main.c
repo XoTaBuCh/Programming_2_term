@@ -29,7 +29,7 @@ struct tree {
     struct tree* right;
 };
 
-struct tree* root; // начальная вершина дерева
+struct tree* root;
 
 void print_tree(struct tree* r, int l, int n) {
     int i;
@@ -68,13 +68,13 @@ int main() {
     char file[100];
     char* a;
 	int countNum = 1;
-	
+
     fp = fopen("input.txt", "r");
     if (!fp) {
 		printf("Input file is invalid");
         exit(-1);
 	}
-	
+
     a = fgets(file, sizeof(file), fp);
     for (int i = 0; i < filesize(fp); i++) {
         if (a[i] == ' ') countNum++;
@@ -84,8 +84,8 @@ int main() {
     for (int i = 0, j = 0; i < countNum - 1; i++, j++) {
         struct tree* temp = root;
         for (;; j++) {
-            if (a[j] == '0') temp = temp->left;                        
-            else if (a[j] == '1') temp = temp->right;           
+            if (a[j] == '0') temp = temp->left;
+            else if (a[j] == '1') temp = temp->right;
             if (temp->right->right == NULL) {
                 temp->info = 1;
                 for (int k = j, l = 0; k != 0 && a[k] != ' '; k--, l++) {
@@ -95,7 +95,7 @@ int main() {
             }
         }
     }
-	
+
     fclose(fp);
     print_tree(root, 0, countNum);
     treeremove(root);
