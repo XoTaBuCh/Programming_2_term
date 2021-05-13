@@ -3,8 +3,7 @@
 #include <cstring>
 #include <malloc.h>
 #include <stdio.h>
-#include <stdlib.h> 
-#include <string.h>
+#include <stdlib.h>
 
 struct Hotel
 {
@@ -63,7 +62,15 @@ void process() {
 	printf("\nPlease write your request like <Venice lux room for two 100>\n");
 	printf("Input: ");
 	getchar();
-	gets(str);
+	char in;
+	int j = 0;	
+	while(in !='\n')
+	{
+		in = getchar();
+		str[j] = in;
+		j++; 
+	}
+	str[j]='\0';
 	int x = 0;
 
 	while (str[x] != -2)
@@ -453,8 +460,8 @@ int countStrings(const char* fname)
 	FILE* file;
 	int counter = 0;
 	char ch[100];
-	file = fopen(fname, "rb");
-	if (file != 0)
+	file = fopen(fname, "r");
+	if (file == 0)
 	{
 		printf("File is not opened");
 		return 0;
@@ -481,8 +488,8 @@ void createStructArray(struct Hotel* hotels, int size, const char* fname)
 	int iter = 0;
 	int arrSize = sizeof(info) / sizeof(info[0]);
 
-	file = fopen(fname, "rb");
-	if (file != 0)
+	file = fopen(fname, "r");
+	if (file == 0)
 	{
 		printf("File is not opened");
 		return;
