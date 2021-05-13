@@ -58,7 +58,6 @@ void process() {
 			choice = NULL;
 		}
 	}
-	system("cls");
 	printf("\nPlease write your request like <Venice lux room for two 100>\n");
 	printf("Input: ");
 	getchar();
