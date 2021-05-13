@@ -172,18 +172,18 @@ void process() {
 		}
 		if (suitability == 4)
 		{
-			printf_s("\n\nAccording to our database your match is: \n[%d]\tHotel <%s> with \n\ttype of rooms <%s> for <%s> for one night,\n\tlocated at <%s, %s>\n", i, hotels[i].hotelName, hotels[i].roomClass, hotels[i].roomCost, hotels[i].city, hotels[i].address);
+			printf("\n\nAccording to our database your match is: \n[%d]\tHotel <%s> with \n\ttype of rooms <%s> for <%s> for one night,\n\tlocated at <%s, %s>\n", i, hotels[i].hotelName, hotels[i].roomClass, hotels[i].roomCost, hotels[i].city, hotels[i].address);
 			counter++;
 		}
 	}
 	if (counter == 0)
 	{
-		printf_s("\nSorry we didn't find any hotel for you\n");
-		printf_s("thanks for choosing HotelTracer\n");
+		printf("\nSorry we didn't find any hotel for you\n");
+		printf("thanks for choosing HotelTracer\n");
 		free(hotels);
 		return;
 	}
-	printf_s("\nWould you like to book any?\n1.Yes  2.No\nInput: ");
+	printf("\nWould you like to book any?\n1.Yes  2.No\nInput: ");
 	choice = NULL;
 	while (true)
 	{
@@ -199,13 +199,13 @@ void process() {
 		}
 		else
 		{
-			printf_s("\nWe don't have this command, please try again\n");
+			printf("\nWe don't have this command, please try again\n");
 			getchar();
 			choice = NULL;
 		}
 	}
-	printf_s("\nPlease enter the index of the hotel u'd like to book\n");
-	printf_s("*index is written in [ ]\nInput: ");
+	printf("\nPlease enter the index of the hotel u'd like to book\n");
+	printf("*index is written in [ ]\nInput: ");
 	int bookedIndex = 0;
 	while (true)
 	{
@@ -221,15 +221,15 @@ void process() {
 		}
 		else
 		{
-			printf_s("\nIndex doesn't exist, try again\n");
-			printf_s("If you want to leave the programm enter -1: ");
+			printf("\nIndex doesn't exist, try again\n");
+			printf("If you want to leave the programm enter -1: ");
 			getchar();
 			bookedIndex = NULL;
 		}
 	}
 	if (reserveRoom(hotels, amountOfHotels, bookedIndex))
 	{
-		printf_s("Operation complete succsessfully!");
+		printf("Operation complete succsessfully!");
 	}
 	free(hotels);
 }
@@ -452,16 +452,15 @@ int countStrings(const char* fname)
 	FILE* file;
 	int counter = 0;
 	char ch[100];
-	errno_t fileOpenError;
-	fileOpenError = fopen_s(&file, fname, "rb");
-	if (fileOpenError != 0)
+	file = fopen(fname, "rb");
+	if (file != 0)
 	{
-		printf_s("File is not opened");
+		printf("File is not opened");
 		return 0;
 	}
 	else
 	{
-		printf_s("Yeah, it's opened");
+		printf("Yeah, it's opened");
 	}
 	while (!feof(file))
 	{
@@ -481,16 +480,15 @@ void createStructArray(struct Hotel* hotels, int size, const char* fname)
 	int iter = 0;
 	int arrSize = sizeof(info) / sizeof(info[0]);
 
-	errno_t fileOpenError;
-	fileOpenError = fopen_s(&file, fname, "rb");
-	if (fileOpenError != 0)
+	file = fopen(fname, "rb");
+	if (file != 0)
 	{
-		printf_s("File is not opened");
+		printf("File is not opened");
 		return;
 	}
 	else
 	{
-		printf_s("...");
+		printf("...");
 	}
 
 	while (!feof(file) && iter < size)
@@ -517,7 +515,7 @@ bool reserveRoom(struct Hotel* hotels, int hotelAmount, int index)
 			FILE* f = fopen("hotelReserved.txt", "a");
 			if (!f)
 			{
-				printf_s("Error");
+				printf("Error");
 				return 0;
 			}
 			fwrite(n, sizeof(char), strlen(n), f);
