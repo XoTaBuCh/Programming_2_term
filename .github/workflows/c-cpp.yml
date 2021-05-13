@@ -26,4 +26,10 @@ jobs:
         make
         cd ..
         done
+    - name: сс
+      uses: codecov/codecov-action@v1
+      with:
+        files: |
+          ./7/main.cpp.gcov
+
 
