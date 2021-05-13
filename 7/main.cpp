@@ -62,7 +62,7 @@ void process() {
 	printf("\nPlease write your request like <Venice lux room for two 100>\n");
 	printf("Input: ");
 	getchar();
-	gets(str);
+	gets_s(str);
 	int x = 0;
 
 	while (str[x] != -2)
