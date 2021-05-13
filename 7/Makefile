@@ -1,4 +1,4 @@
-all: clean buildMain buildTest runTest valgrindCheck linterCheck
+all: clean buildMain buildTest runTest
 
 buildMain:
 	mkdir -p project/main
@@ -10,12 +10,6 @@ buildTest:
 runTest:
 	./project/test/tester < test.txt
 	gcov -abcfu main.cpp
-	
-valgrindCheck:
-	valgrind ./project/main/hotel < test.txt
-
-linterCheck:
-	cpplint *.cpp
 
 clean:
 	rm -rf project
