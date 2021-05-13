@@ -1,0 +1,13 @@
+city , hotel , address.still_address , lux , 2 , 640
+city , 1hotel , street. , lux , 3 , 639
+city , hotel__ , address , lux , 1 , 700
+city , HoTel , address_ , lux , 3 , 760
+Venice , hotelname , address , vip , 3 , 1900
+Venice , hOtEl , addr , lux , 5 , 1100
+Venice , hh , adr , econom , 2 , 560
+Berlin , Hhotel , ulica99 , lux , 2 , 600
+Belrin , hotel_ , str122 , econom , 3 , 550
+Berlin , h , vip , 1 , 1000
+city , Hotel , address , econom , 1 , 150
+Big_city , hotell , addr , econom , 5 , 800
+Big_city , h , addrr , vip , 3 , 1800
