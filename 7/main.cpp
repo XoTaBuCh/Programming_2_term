@@ -70,14 +70,6 @@ void process() {
 		j++; 
 	}
 	str[j]='\0';
-	int x = 0;
-
-	while (str[x] != -2)
-	{
-		x++;
-		continue;
-	}
-	str[x] = '\0';
 	char ans[100];
 	strcat(searchRequest, processRequest(str, ans));
 	int i = 0;
