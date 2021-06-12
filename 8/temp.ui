@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>temp</class>
+ <widget class="QWidget" name="temp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>744</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1366</width>
+    <height>744</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane { 
+	background-color: rgb(170, 170, 255);
+	border-bottom: 0px;
+}
+QTabBar::tab {
+     background: rgb(170, 170, 255);
+     border: 2px solid #C4C4C3;
+     border-bottom: 0px;
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+	 width:447px;
+     padding: 2px;
+	font: 75 13pt;
+	color: rgb(170, 0, 127);
+ }
+ QTabBar::tab:selected {
+     background: rgb(155, 255, 127);
+ }
+ QTabBar::tab:hover {
+     background: rgb(255, 255, 127);
+ }
+
+ QTabBar::tab:selected {
+     border-color: #9B9B9B;
+     border-bottom-color: #C2C7CB; 
+ }
+
+ QTabBar::tab:!selected {
+     margin-top: 2px; 
+ }</string>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Temperature</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Pressure</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Humidity</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>1366</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane { 
+	background-color: rgb(170, 170, 255);
+	border-bottom: 0px;
+}
+QTabBar::tab {
+     background: rgb(170, 170, 255);
+     border: 2px solid #C4C4C3;
+     border-bottom: 0px;
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
+	 width:187px;
+     padding: 2px;
+	font: 75 13pt;
+	color: rgb(170, 0, 127);
+ }
+ QTabBar::tab:selected {
+     background: rgb(155, 255, 127);
+ }
+ QTabBar::tab:hover {
+     background: rgb(255, 255, 127);
+ }
+
+ QTabBar::tab:selected {
+     border-color: #9B9B9B;
+     border-bottom-color: #C2C7CB; 
+ }
+
+ QTabBar::tab:!selected {
+     margin-top: 2px; 
+ }</string>
+   </property>
+   <property name="currentIndex">
+    <number>5</number>
+   </property>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Tab 1</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>Tab 2</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>Tab 3</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_7">
+    <attribute name="title">
+     <string>Tab 4</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_8">
+    <attribute name="title">
+     <string>Tab 5</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_9">
+    <attribute name="title">
+     <string>Tab 6</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="tab_10">
+    <attribute name="title">
+     <string>Tab 7</string>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>1266</x>
+     <y>694</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QCheckBox { 
+	spacing: 5px;
+	background-color: rgb(170, 170, 255);
+	border: 1px;
+	border-top-left-radius: 15px;
+	font: 15pt;
+	color: rgb(170, 0, 127);
+}
+QCheckBox::indicator {
+	left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Icons</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
